@@ -1,5 +1,6 @@
 package calendar.backend.service.calendarbackendservice.user.model;
 
+import calendar.backend.service.calendarbackendservice.appointment.model.Appointment;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -28,7 +29,7 @@ public class User {
     private String name;
 
     @Field(PROPERTY_APPOINTMENT)
-    private List<String> appointments;
+    private List<Appointment> appointments;
 
     public User() {
     }
