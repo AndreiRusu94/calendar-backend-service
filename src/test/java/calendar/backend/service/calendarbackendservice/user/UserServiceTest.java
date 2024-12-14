@@ -1,6 +1,5 @@
 package calendar.backend.service.calendarbackendservice.user;
 
-import calendar.backend.service.calendarbackendservice.AbstractTest;
 import calendar.backend.service.calendarbackendservice.TestConfiguration;
 import calendar.backend.service.calendarbackendservice.user.model.User;
 import calendar.backend.service.calendarbackendservice.user.repository.UserRepository;
@@ -17,7 +16,7 @@ import static org.junit.Assert.assertNotNull;
 
 @ContextConfiguration(classes = {TestConfiguration.class})
 @SpringBootTest
-public class UserServiceTest extends AbstractTest {
+public class UserServiceTest {
 
     @Autowired
     private UserService userService;
