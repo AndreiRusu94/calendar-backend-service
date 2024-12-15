@@ -15,7 +15,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
 
     private String name;
 
@@ -25,7 +25,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(final String userId) {
+    public Person(final Integer userId) {
         this.id = userId;
     }
 
