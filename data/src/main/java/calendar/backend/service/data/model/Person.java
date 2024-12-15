@@ -4,21 +4,29 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.OneToMany;
+import lombok.Data;
 
-import java.util.Date;
+import java.util.List;
 
-@Getter
-@Setter
+@Data
 @Entity
-public class Appointment {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Date startDate;
+    private String name;
 
-    private Date endDate;
+    @OneToMany
+    private List<Appointment> appointments;
+
+    public Person() {
+    }
+
+    public Person(final Integer userId) {
+        this.id = userId;
+    }
+
 }
