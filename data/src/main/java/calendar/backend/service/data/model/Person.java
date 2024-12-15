@@ -11,7 +11,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class User {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,10 @@ public class User {
     @OneToMany
     private List<Appointment> appointments;
 
-    public User() {
+    public Person() {
     }
 
-    public User(final String userId) {
+    public Person(final String userId) {
         this.id = userId;
     }
 

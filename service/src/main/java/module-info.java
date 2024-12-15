@@ -1,5 +1,5 @@
-import calendar.backend.service.data.model.User;
-import calendar.backend.service.data.repository.UserRepository;
+import calendar.backend.service.data.model.Person;
+import calendar.backend.service.data.repository.PersonRepository;
 
 open module service {
     requires data;
@@ -9,6 +9,6 @@ open module service {
     requires spring.context;
     requires spring.web;
 
-    uses User;
-    uses UserRepository;
+    uses Person;
+    uses PersonRepository;
 }
