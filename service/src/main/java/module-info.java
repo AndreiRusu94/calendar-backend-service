@@ -8,6 +8,8 @@ open module service {
     requires spring.beans;
     requires spring.context;
     requires spring.web;
+    requires spring.data.jpa;
+    requires spring.data.commons;
 
     uses Person;
     uses PersonRepository;
