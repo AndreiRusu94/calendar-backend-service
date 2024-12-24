@@ -18,10 +18,6 @@ public class AppointmentService {
         this.appointmentRepository = appointmentRepository;
     }
 
-    public List<Appointment> findAll() {
-        return appointmentRepository.findAll();
-    }
-
     public List<Appointment> findAppointmentsForMonth(LocalDate date) {
         return appointmentRepository.findAppointmentsForMonth(date);
     }
