@@ -6,4 +6,6 @@ open module app {
     requires spring.data.jpa;
     requires service;
     requires data;
+    requires spring.context;
+    requires spring.webmvc;
 }

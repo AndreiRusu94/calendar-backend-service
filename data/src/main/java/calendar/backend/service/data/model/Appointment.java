@@ -1,13 +1,13 @@
 package calendar.backend.service.data.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,10 +15,15 @@ import java.util.Date;
 public class Appointment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Integer id;
 
-    private Date startDate;
+    @Column(name = "start_time")
+    LocalDateTime startTime;
 
-    private Date endDate;
+    @Column(name = "end_time")
+    LocalDateTime endTime;
+
+    String title;
+    String note;
 }
