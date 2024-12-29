@@ -1,6 +1,10 @@
 package calendar.backend.service.data.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,4 +28,7 @@ public class CalendarDay {
 
     @Column(name = "start_date")
     private LocalDate startDate;
+
+    @OneToMany
+    private List<Goal> goals;
 }
