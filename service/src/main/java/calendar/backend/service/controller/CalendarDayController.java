@@ -2,6 +2,7 @@ package calendar.backend.service.controller;
 
 import calendar.backend.service.data.model.CalendarDay;
 import calendar.backend.service.service.CalendarDayService;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,5 +31,10 @@ public class CalendarDayController {
     @PostMapping
     public CalendarDay updateDay(@RequestBody CalendarDay calendarDay) {
         return calendarDayService.saveDay(calendarDay);
+    }
+
+    @DeleteMapping
+    public void deleteDay(@RequestParam Long id) {
+        calendarDayService.deleteDay(id);
     }
 }

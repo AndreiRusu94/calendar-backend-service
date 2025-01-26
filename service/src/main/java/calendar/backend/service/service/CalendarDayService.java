@@ -28,4 +28,8 @@ public class CalendarDayService {
 
         return day.map(calendarDayRepository::save).orElseGet(() -> calendarDayRepository.save(calendarDay));
     }
+
+    public void deleteDay(Long id) {
+        calendarDayRepository.deleteById(id);
+    }
 }
