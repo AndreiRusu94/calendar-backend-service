@@ -34,4 +34,7 @@ public class CalendarDay {
 
     @OneToMany
     private List<Goal> goals;
+
+    @Column(name = "day_number")
+    private Integer number;
 }
