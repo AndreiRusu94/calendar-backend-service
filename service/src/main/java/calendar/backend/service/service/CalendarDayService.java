@@ -21,4 +21,15 @@ public class CalendarDayService {
     public List<CalendarDay> findDaysWithDataForMonth(LocalDate date) {
         return calendarDayRepository.findDaysWithDataForMonth(date);
     }
+
+    public CalendarDay saveDay(CalendarDay calendarDay) {
+        var day = calendarDayRepository.findById(calendarDay.getId());
+        calendarDay.setId(calendarDayRepository.getNextSequenceValue());
+
+        return day.map(calendarDayRepository::save).orElseGet(() -> calendarDayRepository.save(calendarDay));
+    }
+
+    public void deleteDay(Long id) {
+        calendarDayRepository.deleteById(id);
+    }
 }

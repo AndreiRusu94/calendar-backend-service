@@ -15,4 +15,7 @@ public interface CalendarDayRepository extends JpaRepository<CalendarDay, Long> 
             FROM CALENDAR_DAY d
             WHERE MONTH(d.startDate) = MONTH(:startDate) AND YEAR(d.startDate) = YEAR(:startDate)""")
     List<CalendarDay> findDaysWithDataForMonth(@Param("startDate") LocalDate startDate);
+
+    @Query(value = "SELECT CALENDAR_DAY_SEQUENCE.NEXTVAL FROM dual", nativeQuery = true)
+    Long getNextSequenceValue();
 }
